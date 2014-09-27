@@ -1,0 +1,674 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Rays Aquarium Service</title>
+	<meta name="description" content="aquarium and pond pond">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="/i/favicon.gif" type="image/x-icon" />
+
+</head>
+
+
+<body>
+
+    <script type="text/javascript" src="../js/jssor.core.js"></script>
+    <script type="text/javascript" src="../js/jssor.utils.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+    
+    <script>
+        jssor_slider1_starter = function (containerId) {
+
+            var _SlideshowTransitions = [
+            //Fade in L
+                {$Duration: 1200, x: 0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade out R
+                , { $Duration: 1200, x: -0.3, $SlideOut: true, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade in R
+                , { $Duration: 1200, x: -0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade out L
+                , { $Duration: 1200, x: 0.3, $SlideOut: true, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+
+            //Fade in T
+                , { $Duration: 1200, y: 0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade out B
+                , { $Duration: 1200, y: -0.3, $SlideOut: true, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade in B
+                , { $Duration: 1200, y: -0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade out T
+                , { $Duration: 1200, y: 0.3, $SlideOut: true, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+
+            //Fade in LR
+                , { $Duration: 1200, x: 0.3, $Cols: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Column: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade out LR
+                , { $Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade in TB
+                , { $Duration: 1200, y: 0.3, $Rows: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Row: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade out TB
+                , { $Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+
+            //Fade in LR Chess
+                , { $Duration: 1200, y: 0.3, $Cols: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Column: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade out LR Chess
+                , { $Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade in TB Chess
+                , { $Duration: 1200, x: 0.3, $Rows: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Row: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade out TB Chess
+                , { $Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+
+            //Fade in Corners
+                , { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+            //Fade out Corners
+                , { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $SlideOut: true, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
+
+            //Fade Clip in H
+                , { $Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade Clip out H
+                , { $Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseOutCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade Clip in V
+                , { $Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+            //Fade Clip out V
+                , { $Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseOutCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
+                ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $ArrowKeyNavigation: true,                          //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 800,                                //Specifies default duration (swipe) for slide in milliseconds
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                 //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1                                //[Required] 0 Never, 1 Mouse Over, 2 Always
+                },
+
+                $ThumbnailNavigatorOptions: {                       //[Optional] Options to specify and enable thumbnail navigator or not
+                    $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
+                    $DisplayPieces: 10,                             //[Optional] Number of pieces to display, default value is 1
+                    $ParkingPosition: 360                           //[Optional] The offset position to park thumbnail
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$(containerId, options);
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$SetScaleWidth(Math.max(Math.min(parentWidth, 800), 300));
+                else
+                    $JssorUtils$.$Delay(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+            $JssorUtils$.$AddEvent(window, "load", ScaleSlider);
+
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $JssorUtils$.$OnWindowResize(window, ScaleSlider);
+            }
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $JssorUtils$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        };
+    </script>
+    <!--googleoff: index-->
+    
+    <!-- Loading -->
+    <div class="loading">
+        <div class="spinner">
+            <div class="mask">
+                <div class="maskedCircle"></div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Menu Fixed -->
+	<header>
+		<nav>
+			<div id="menuf" class="menu ani">
+				<div class="wrap">
+					<a href="#home" class="btn logo fleft ani-cubic" title="150 Pixels"></a>
+					<div class="fright">
+						<a class="btn ani" href="#intro">about us</a>
+						&nbsp;&nbsp;/&nbsp;&nbsp;
+						<a class="btn ani" href="#aquarium">aqaurium</a>
+						&nbsp;&nbsp;/&nbsp;&nbsp;
+                        <a class="btn ani" href="#pond">pond</a>
+                        &nbsp;&nbsp;/&nbsp;&nbsp;
+						<a class="btn ani" href="#gallery">gallery</a>   
+						&nbsp;&nbsp;/&nbsp;&nbsp;
+						<a class="btn ani" href="#brands">brands</a>
+						&nbsp;&nbsp;/&nbsp;&nbsp;
+						<a class="btn ani" href="#contact">contact</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</nav>
+	</header>
+    
+    <!-- Menu Responsive -->
+    <nav>
+        <div id="menur" class="ani-cubic ocult">
+            <span class="burguer ani-cubic"></span>
+            <a class="btn ani" href="#intro">about us</a>
+            <a class="btn ani" href="#aquarium">aqaurium</a>            
+            <a class="btn ani" href="#pond">ponds</a> 
+            <a class="btn ani" href="#gallery">gallery</a>  
+            <a class="btn ani" href="#brands">brands</a>
+            <a class="btn ani" href="#contact">contact</a>
+        </div>
+    </nav>
+    
+	<div id="background">
+        <!--
+<video id="video" class="fill" width="1920" height="1080" autoplay="" loop="" muted="muted" style="display:none">
+            <source src="video/japan.ogg" type="video/ogg">
+            <source src="video/japan.webm" type="video/webm">
+            <source src="video/japan.mp4" type="video/mp4">
+        </video>
+-->
+	</div>
+	
+    <!-- Frame -->
+    <div id="frame">
+        <!-- home -->
+		<div id="home" class="dawn">
+            <div class="pattern">
+			    <div class="wrap">
+					<!--googleon: index-->
+					<section>
+                        <div id="hello"> 
+						    <div class="wrap">
+                                <img src="i/logo.png" width="100%" height-"50%"  alt="Aquarium and Pond pond" />
+								<!-- <img id="logo-mini" class="dawn delay8" src="i/logo-mini.png" alt="150 Pixels" /> -->
+								<a id="badge" class="btn" href="#intro">
+									<!-- <h1 class="dawn delay2">aquarium and pond pond<b></b> </h1> -->
+									<!-- <h2 class="dawn dawn delay5">sales - services - other stuff</h2> -->
+								</a>
+								<div id="c1">
+								    <div class="bottom-btns dawn delay5 floating">
+										<a class="btn ani" href="#intro"><img src="i/arrow_down_icon.svg" width="32" height="32" alt="Arrow down" /></a>
+										<!-- <a class="btn ani" href="#intro"><img src="i/mouse_icon.svg" width="32" height="32" alt="Scroll" /></a> -->
+									</div> <!-- class="bottom-btns dawn delay5 floating" -->
+								
+                                </div> <!-- id="c1" -->
+						    </div> <!-- class="wrap" -->
+                        </div> <!-- id="hello" -->
+                    </section> 
+			    </div> <!-- class="wrap" -->
+            </div> <!-- class="pattern" -->
+		</div> <!-- id="home" class="dawn" -->
+
+		
+			
+		<div class="container">
+				
+			<!-- intro -->
+            <section>
+                <div id="intro" class="ap">
+                    <div class="wrap">
+                        <h1 class="wellcome delay1"><b>Aquarium and Pond Solutions</b> was created to provide professional aquarium & pond services for the greater San Antonio area. <b>Aquarium and Pond Solutions</b> is known for its outstanding service, design, and custom installations. We provide full liability insurance in order to give our clients complete peace of mind in working with our company. With over 30yrs. experience and knowledge in the aquarium & pond industry you can trust we will provide you with an enjoyable experience.</h1>
+                    </div>
+                </div>
+            </section>
+
+
+			<!-- aquarium -->
+            <section>
+                 
+                <div id="aquarium" class="ap alternate"> 
+                    <div class="wrap">
+                    
+                    <h2>Aquarium<span><!-- section 3 description. --></span><span class="miniraya"></span></h2>
+                        <div  class="box box1 wellcome delay1">
+                            <h2 itemprop="name">Routine Service<span class="miniraya"></span></h2>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Monthly service accounts</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  No contracts</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  No emergency fees</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Fully insured and bonded</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Salt or fresh water.</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Commercial or residential</p>
+                        </div>
+    
+                        <div  class="box box2 wellcome delay2">
+                            <h2 itemprop="name">Installation and Design<span class="miniraya"></span></h2>
+							<p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Total turnkey aquarum design</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Design consultaion</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Custom inserts for theme aquariums</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Built-in / Room divider / Free Standing</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Quality live stock from around the world</p>
+                        </div>
+    
+                        <div  class="box box3 wellcome delay3">
+                            <h2 itemprop="name">Repair and Maintenence<span class="miniraya"></span></h2>
+							<p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Upgrade existing filtration systems</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Equipment failure diagnose and repair</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  One time cleanouts</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Aquarium relocations</p>
+                            <p itemprop="description"><img width="25px" height="25px" src="/i/clownfish.png" alt="Warning!">  Freshwater to saltwater conversion</p>
+                        </div>
+    
+                        <div class="clear"></div>
+                    </div> <!-- class="wrap" -->
+                </div> <!-- id="aquarium" class="ap alternate" -->                
+            </section>
+
+            
+
+
+            <!-- pond -->
+            <section>
+                <div id="pond" class="ap">
+                    <div class="wrap">
+						<div id="leftsol">
+							<h2>Ponds<span><!-- Pond section description. --></span><span class="miniraya"></span></h2>
+							<div id="visor" class="wellcome ani">
+                            <div class="browser"></div>
+								<img data-iurl="i/pondclean.jpg" class="1 a" />
+								<img data-iurl="i/pond-repair.jpg" class="2" />
+								<img data-iurl="i/pond kit.gif" class="3" />
+							</div>
+						</div>
+						<div id="tipos" class="fright">
+							<div itemscope itemtype="http://schema.org/Product" class="tipo wellcome delay1" data-tipo="1"><h3 itemprop="name" class="ani active"><b>Services</b></h3><p itemprop="description">
+                            <ul>
+                                <li>Spring & Fall cleanouts</li>
+                                <li>Upgrade to user friendly equipment</li>
+                                <li>Demo & facelift</li>
+                                
+                                <li>Pond expansion</li>
+                                <li>Waterlilies / Plants / Koi</li>
+                            </ul>
+
+
+                            </p></div>
+							
+                            <div itemscope itemtype="http://schema.org/Product" class="tipo wellcome delay2" data-tipo="2"><h3 itemprop="name" class="ani"><b>Repair</b></h3><p itemprop="description">
+                            <ul>
+                                <li>Leak Detection</li>
+                                <li>Pump Failure</li>
+                                <li>Leaks and cracks resealed</li>
+                                <li>Sodium bentonite application</li>
+                                <li>Consultaion and free quotes</li>
+                            </ul>
+
+
+
+                            </p></div>
+							
+                            <div itemscope itemtype="http://schema.org/Product" class="tipo wellcome delay3" data-tipo="3" style="margin-bottom:20px"><h3 itemprop="name" class="ani"><b>Install & DIY kits</b></h3><p itemprop="description">
+                                <ul>
+                                <li>Turnkey Pond systems</li>
+                                <li>Pond skimmer boxes</li>
+                                <li>Pond waterfall filter units</li>
+                                <li>UV sterilizer</li>
+                                <li>DIY kits with consultation</li> 
+                            </ul>
+
+                            </p></div>
+							<a class="buto btn buap ani wellcome delay5" href="#contact">Learn More</a>
+						</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </section>
+
+           
+			
+			<!-- gallery -->
+                
+            <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+    <section>
+    <div id="gallery" class="ap">
+        <div>
+            <h2 class="fleft">Gallery<span>Examples of our work.</span><span class="miniraya"></span></h2>
+        </div>
+    
+    <div class="fright" id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 800px;
+        height: 456px; background: #191919; overflow: hidden;">
+
+        <!-- Loading Screen -->
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+        </div> <!-- u="loading" -->
+
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
+            <div>
+                <img u="image" src="../img/alila/01.jpg" />
+                <img u="thumb" src="../img/alila/thumb-01.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/02.jpg" />
+                <img u="thumb" src="../img/alila/thumb-02.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/03.jpg" />
+                <img u="thumb" src="../img/alila/thumb-03.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/04.jpg" />
+                <img u="thumb" src="../img/alila/thumb-04.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/05.jpg" />
+                <img u="thumb" src="../img/alila/thumb-05.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/06.jpg" />
+                <img u="thumb" src="../img/alila/thumb-06.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/07.jpg" />
+                <img u="thumb" src="../img/alila/thumb-07.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/08.jpg" />
+                <img u="thumb" src="../img/alila/thumb-08.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/09.jpg" />
+                <img u="thumb" src="../img/alila/thumb-09.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/10.jpg" />
+                <img u="thumb" src="../img/alila/thumb-10.jpg" />
+            </div>
+            
+            <div>
+                <img u="image" src="../img/alila/11.jpg" />
+                <img u="thumb" src="../img/alila/thumb-11.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/12.jpg" />
+                <img u="thumb" src="../img/alila/thumb-12.jpg" />
+            </div>
+            <div>
+                <img u="image" src="../img/alila/13.jpg" />
+                <img u="thumb" src="../img/alila/thumb-13.jpg" />
+            </div>
+        </div> <!-- u="slides" -->
+        
+        
+
+
+
+
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 05 css */
+            /*
+            .jssora05l              (normal)
+            .jssora05r              (normal)
+            .jssora05l:hover        (normal mouseover)
+            .jssora05r:hover        (normal mouseover)
+            .jssora05ldn            (mousedown)
+            .jssora05rdn            (mousedown)
+            */
+            .jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
+            {
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                background: url(../img/a17.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora05l { background-position: -10px -40px; }
+            .jssora05r { background-position: -70px -40px; }
+            .jssora05l:hover { background-position: -130px -40px; }
+            .jssora05r:hover { background-position: -190px -40px; }
+            .jssora05ldn { background-position: -250px -40px; }
+            .jssora05rdn { background-position: -310px -40px; }
+        </style>
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 158px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 158px; right: 8px">
+        </span>
+        <!-- Arrow Navigator Skin End -->
+        
+        
+
+
+
+        <!-- Thumbnail Navigator Skin Begin -->
+        <div u="thumbnavigator" class="jssort01" style="position: absolute; width: 800px; height: 100px; left:0px; bottom: 0px;">
+            <!-- Thumbnail Item Skin Begin -->
+            <style>
+                /* jssor slider thumbnail navigator skin 01 css */
+                /*
+                .jssort01 .p           (normal)
+                .jssort01 .p:hover     (normal mouseover)
+                .jssort01 .pav           (active)
+                .jssort01 .pav:hover     (active mouseover)
+                .jssort01 .pdn           (mousedown)
+                */
+                .jssort01 .w {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .jssort01 .c {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 68px;
+                    height: 68px;
+                    border: #000 2px solid;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
+                    background: url(../img/t01.png) center center;
+                    border-width: 0px;
+                    top: 2px;
+                    left: 2px;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
+                    top: 0px;
+                    left: 0px;
+                    width: 70px;
+                    height: 70px;
+                    border: #fff 1px solid;
+                }
+            </style>
+            
+            <div u="slides" style="cursor: move;">
+                <div u="prototype" class="p" style="position: absolute; width: 72px; height: 72px; top: 0; left: 0;">
+                    <div class=w><thumbnailtemplate style=" width: 100%; height: 100%; border: none;position:absolute; top: 0; left: 0;"></thumbnailtemplate></div>
+                    <div class=c>
+                    </div> <!-- class=c -->
+                </div> <!-- u="prototype" -->
+            </div> <!-- u="slides" style="cursor: move -->
+            <!-- Thumbnail Item Skin End -->
+        </div> <!-- u="thumbnavigator" -->
+        <!-- Thumbnail Navigator Skin End -->
+        
+
+        <a style="display: none" href="http://www.jssor.com">javascript</a>
+        <!-- Trigger -->
+        <script>
+            jssor_slider1_starter('slider1_container');
+        </script>
+    
+
+    </div>
+    
+</div>
+</section>
+    <!-- Jssor Slider End -->
+                
+				
+
+
+
+
+			<!-- brands -->
+            <section>
+                <div id="brands" class="ap alternate" background-color:rgba(100,110,110,0)> 
+                    <div class="wrap">
+                        
+
+                        <h2>Brands<span>We use the highest quality products</span><span class="miniraya"></span></h2>
+                    
+                    
+                    <div class="job wellcome">
+                        <img width="290" height="126" src="" data-iurl="i/atlantic.png" alt="Atlantic" />
+                        <h4>Atlantic<i></i></h4>
+                        <p>brand 1 description.</p>
+                    </div>
+                    <div class="job wellcome delay1">
+                        <img width="148" height="81" src="" data-iurl="i/dsa.png" alt="Deep Sea" />
+                        <h4>Deep Sea Aquatics</h4>
+                        <p>brand 2 description.</p>
+                    </div>
+					<div class="job wellcome delay2">
+                        <img width="305" height="93" src="" data-iurl="i/InstantOcean.png" alt="Instant Ocean" />
+                        <h4>Instant Ocean</h4>
+                        <p>brand 3 description.</p>
+                    </div>
+                    <div class="job wellcome delay3">
+                        <img width="259" height="115" src="" data-iurl="i/python.gif" alt="Python Products" />
+                        <h4>Python Products<i></i></h4>
+                        <p>brand 4 description.</p>
+                    </div>
+                    <div class="job wellcome delay4">
+                        <img width="259" height="125" src="" data-iurl="i/ocean.png" alt="Ocean Aquaria" />
+                        <h4>Ocean Aquaria</h4>
+                        <p>brand 5 description</p>
+                    </div>
+                    <div class="job wellcome delay5">
+                    	<img width="300" height="53" src="" data-iurl="i/brand6.gif" alt="Savio" />
+                        <h4>Savio</h4>
+                        <p>brand 6 descriptio.</p>
+                    </div>
+
+                        <div class="clear"></div>
+                    </div> <!-- class=wrap -->
+                </div> <!-- id="brands" class="ap alternate" -->
+			
+            </section>
+			
+			<!-- contact -->
+            <section>
+                <div id="contact" class="ap">
+                    <div class="wrap">
+                        <h2 style="text-align:left">Contact us<span></span><span class="miniraya"></span></h2>
+                        <div class="form fleft">
+                            <!-- <img src="i/ray.jpg">aaa -->
+
+                                <!-- Do not change the code! -->
+                                <a id="foxyform_embed_link_591397" href="http://www.foxyform.com/">foxyform</a>
+                                <script type="text/javascript">
+                                (function(d, t){
+                                   var g = d.createElement(t),
+                                       s = d.getElementsByTagName(t)[0];
+                                   g.src = "http://www.foxyform.com/js.php?id=591397&sec_hash=f84aa91ad1e&width=350px";
+                                   s.parentNode.insertBefore(g, s);
+                                }(document, "script"));
+                                </script>
+                                <!-- Do not change the code! -->
+
+
+
+
+
+                            <!-- <form action="sendmail.php" method="post" id="contactForm">
+                                <input name="name" type="text" class="nom ani" placeholder="Name" />
+                                <input name="email" type="text" class="mail ani" placeholder="Email" style="margin-right:0" />
+                                <input name="tele" type="text" class="telf ani" placeholder="Telephone" maxlength="9" />
+                                <input name="brand" type="text" class="comp ani" placeholder="Company" style="margin-right:0" />
+                                <textarea name="message" class="msg ani" rows="20" cols="40" placeholder="Please explain services needed"></textarea>
+                                <div class="message"><div id="alert">
+                                    <h5><b>Disponibilidad:</b> <i>proyectos freelance</i></h5>
+                                </div></div>
+                                <input type="submit" value="Submit" class="buto fright ani" />
+                                <div class="clear"></div>
+                            </form> -->
+                        </div>
+                        <hr />
+                        <div class="me fright" itemscope itemtype="http://schema.org/LocalBusiness">
+                            <h5>You can fill out the form, send an email or call.</h5>
+                            <!--googleoff: index-->
+                            <P>by appt only</P>
+                            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a class="me1 ani" target="_blank" href="https://goo.gl/maps/6kt4a" itemprop="streetAddress">11950 Starcrest Dr, San Antonio, TX 78247</a></p>
+
+                            <p itemprop="email"><a class="me2 ani" href="mailto:ray@email.com">rayren38@gmail.com</a></p>
+                            <p itemprop="telephone"><a class="me3 ani" href="tel:210123456">210 218 4438</a></p>
+                            <!--googleon: index-->
+                            <p style="line-height: 27px;">Upon receiving the message, we will contact you as soon as possible.</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+			</section>
+                
+            
+            <!-- footer -->
+            <footer>
+               
+			</footer>
+
+		</div> <!-- class="container" -->
+	</div> <!-- id="frame" -->
+	
+	<div id="demoviewer" class="modal">
+		<div class="browser"></div>
+		<img src="" alt="demo" />
+        <a href="javascript:void(0)" class="modal_close"></a>
+	</div>
+
+
+
+	<!-- Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/plugins.js" async></script>
+    <script src="js/script.js" async></script>
+	
+	// <script>
+	//     (function (i, s, o, g, r, a, m) {
+	//         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+	//             (i[r].q = i[r].q || []).push(arguments)
+	//         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+ //            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+	//     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	//     ga('create', 'UA-42929761-1', '150px.com');
+	//     ga('send', 'pageview');
+ //    </script>
+	
+</body>
+</html>
