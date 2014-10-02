@@ -11,127 +11,18 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="/i/favicon.gif" type="image/x-icon" />
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+
+
 
 </head>
 
 
-<body>
-
-    <script type="text/javascript" src="../js/jssor.core.js"></script>
-    <script type="text/javascript" src="../js/jssor.utils.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+<bod
     
-    <script>
-        jssor_slider1_starter = function (containerId) {
-
-            var _SlideshowTransitions = [
-            //Fade in L
-                {$Duration: 1200, x: 0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade out R
-                , { $Duration: 1200, x: -0.3, $SlideOut: true, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade in R
-                , { $Duration: 1200, x: -0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade out L
-                , { $Duration: 1200, x: 0.3, $SlideOut: true, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-
-            //Fade in T
-                , { $Duration: 1200, y: 0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade out B
-                , { $Duration: 1200, y: -0.3, $SlideOut: true, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade in B
-                , { $Duration: 1200, y: -0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade out T
-                , { $Duration: 1200, y: 0.3, $SlideOut: true, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-
-            //Fade in LR
-                , { $Duration: 1200, x: 0.3, $Cols: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Column: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade out LR
-                , { $Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade in TB
-                , { $Duration: 1200, y: 0.3, $Rows: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Row: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade out TB
-                , { $Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-
-            //Fade in LR Chess
-                , { $Duration: 1200, y: 0.3, $Cols: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Column: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade out LR Chess
-                , { $Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 12 }, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade in TB Chess
-                , { $Duration: 1200, x: 0.3, $Rows: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Row: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade out TB Chess
-                , { $Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 3 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-
-            //Fade in Corners
-                , { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-            //Fade out Corners
-                , { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $SlideOut: true, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2, $Outside: true }
-
-            //Fade Clip in H
-                , { $Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade Clip out H
-                , { $Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseOutCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade Clip in V
-                , { $Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-            //Fade Clip out V
-                , { $Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $JssorEasing$.$EaseOutCubic, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 }
-                ];
-
-            var options = {
-                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlayInterval: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-                $ArrowKeyNavigation: true,                          //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-                $SlideDuration: 800,                                //Specifies default duration (swipe) for slide in milliseconds
-
-                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
-                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
-                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
-                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
-                    $ShowLink: true                                 //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
-                },
-
-                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
-                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
-                    $ChanceToShow: 1                                //[Required] 0 Never, 1 Mouse Over, 2 Always
-                },
-
-                $ThumbnailNavigatorOptions: {                       //[Optional] Options to specify and enable thumbnail navigator or not
-                    $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
-                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                    $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
-                    $SpacingX: 8,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
-                    $DisplayPieces: 10,                             //[Optional] Number of pieces to display, default value is 1
-                    $ParkingPosition: 360                           //[Optional] The offset position to park thumbnail
-                }
-            };
-
-            var jssor_slider1 = new $JssorSlider$(containerId, options);
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-                if (parentWidth)
-                    jssor_slider1.$SetScaleWidth(Math.max(Math.min(parentWidth, 800), 300));
-                else
-                    $JssorUtils$.$Delay(ScaleSlider, 30);
-            }
-
-            ScaleSlider();
-            $JssorUtils$.$AddEvent(window, "load", ScaleSlider);
-
-
-            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
-                $JssorUtils$.$OnWindowResize(window, ScaleSlider);
-            }
-
-            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
-            //    $JssorUtils$.$AddEvent(window, "orientationchange", ScaleSlider);
-            //}
-            //responsive code end
-        };
-    </script>
-    <!--googleoff: index-->
     
     <!-- Loading -->
     <div class="loading">
@@ -140,7 +31,7 @@
                 <div class="maskedCircle"></div>
             </div>
         </div>
-    </div>
+    </div> <!-- class="loading" -->
 
 	<!-- Menu Fixed -->
 	<header>
@@ -182,7 +73,7 @@
     
 	<div id="background">
         <!--
-<video id="video" class="fill" width="1920" height="1080" autoplay="" loop="" muted="muted" style="display:none">
+    <video id="video" class="fill" width="1920" height="1080" autoplay="" loop="" muted="muted" style="display:none">
             <source src="video/japan.ogg" type="video/ogg">
             <source src="video/japan.webm" type="video/webm">
             <source src="video/japan.mp4" type="video/mp4">
@@ -275,8 +166,6 @@
             </section>
 
             
-
-
             <!-- pond -->
             <section>
                 <div id="pond" class="ap">
@@ -286,8 +175,8 @@
 							<div id="visor" class="wellcome ani">
                             <div class="browser"></div>
 								<img data-iurl="i/pondclean.jpg" class="1 a" />
-								<img data-iurl="i/pond-repair.jpg" class="2" />
-								<img data-iurl="i/pond kit.gif" class="3" />
+								<img data-iurl="i/pondrepair.jpg" class="2" />
+								<img data-iurl="i/pondkit.gif" class="3" />
 							</div>
 						</div>
 						<div id="tipos" class="fright">
@@ -327,7 +216,7 @@
                             </ul>
 
                             </p></div>
-							<a class="buto btn buap ani wellcome delay5" href="#contact">Learn More</a>
+							<a class="fright buto btn buap ani wellcome delay5" href="#contact">Learn More</a>
 						</div>
                         <div class="clear"></div>
                     </div>
@@ -336,251 +225,154 @@
 
            
 			
-			<!-- gallery -->
+    <!-- gallery -->
                 
-            <!-- Jssor Slider Begin -->
-    <!-- You can move inline styles to css file or css block. -->
+     
     <section>
-    <div id="gallery" class="ap">
+        <div id="gallery" class="ap">
+    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+
+<!-- Aquarium pics -->
+<div id="wowslider-container1">
+    <div class="ws_images">
+        <ul>
+            <li><img src="data1/images/a01a.jpg" alt="01" title="01" id="wows1_0"/></li>
+            <li><img src="data1/images/a02a.jpg" alt="02" title="02" id="wows1_1"/></li>
+            <li><img src="data1/images/a03a.jpg" alt="03" title="03" id="wows1_2"/></li>
+            <li><img src="data1/images/a04a.jpg" alt="04" title="04" id="wows1_3"/></li>
+            <li><img src="data1/images/a05a.jpg" alt="05" title="05" id="wows1_4"/></li>
+            <li><img src="data1/images/a06a.jpg" alt="06" title="06" id="wows1_5"/></li>
+            <li><img src="data1/images/a07a.jpg" alt="07" title="07" id="wows1_6"/></li>
+            <li><img src="data1/images/a08a.jpg" alt="08" title="08" id="wows1_7"/></li>
+            <li><img src="data1/images/a09a.jpg" alt="09" title="09" id="wows1_8"/></li>
+            <li><img src="data1/images/a10a.jpg" alt="10" title="10" id="wows1_9"/></li>
+            <li><img src="data1/images/a11a.jpg" alt="11" title="11" id="wows1_10"/></li>
+            <li><img src="data1/images/a12a.jpg" alt="12" title="12" id="wows1_11"/></li>
+        </ul>
+    </div> <!-- class="ws_images" -->
+    <div class="ws_bullets">
         <div>
-            <h2 class="fleft">Gallery<span>Examples of our work.</span><span class="miniraya"></span></h2>
+            <a href="#" title="01"><img src="data1/tooltips/01.jpg" alt="01"/>1</a>
+            <a href="#" title="02"><img src="data1/tooltips/02.jpg" alt="02"/>2</a>
+            <a href="#" title="03"><img src="data1/tooltips/03.jpg" alt="03"/>3</a>
+            <a href="#" title="04"><img src="data1/tooltips/04.jpg" alt="04"/>4</a>
+            <a href="#" title="05"><img src="data1/tooltips/05.jpg" alt="05"/>5</a>
+            <a href="#" title="06"><img src="data1/tooltips/06.jpg" alt="06"/>6</a>
+            <a href="#" title="07"><img src="data1/tooltips/07.jpg" alt="07"/>7</a>
+            <a href="#" title="08"><img src="data1/tooltips/08.jpg" alt="08"/>8</a>
+            <a href="#" title="09"><img src="data1/tooltips/09.jpg" alt="09"/>9</a>
+            <a href="#" title="10"><img src="data1/tooltips/10.jpg" alt="10"/>10</a>
+            <a href="#" title="11"><img src="data1/tooltips/11.jpg" alt="11"/>11</a>
+            <a href="#" title="12"><img src="data1/tooltips/12.jpg" alt="12"/>12</a>
         </div>
+    </div> <!-- class="ws_bullets" -->
+    <span class="wsl"></span>
+    <div class="ws_shadow"></div>
+</div>  <!-- id="wowslider-container1" -->
     
-    <div class="fright" id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 800px;
-        height: 456px; background: #191919; overflow: hidden;">
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <!-- End WOWSlider.com BODY section -->
 
-        <!-- Loading Screen -->
-        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
-                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
-            </div>
-            <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
-                top: 0px; left: 0px;width: 100%;height:100%;">
-            </div>
-        </div> <!-- u="loading" -->
-
-        <!-- Slides Container -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 356px; overflow: hidden;">
-            <div>
-                <img u="image" src="../img/01.jpg" />
-                <img u="thumb" src="../img/thumb-01.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/02.jpg" />
-                <img u="thumb" src="../img/thumb-02.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/03.jpg" />
-                <img u="thumb" src="../img/thumb-03.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/04.jpg" />
-                <img u="thumb" src="../img/thumb-04.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/05.jpg" />
-                <img u="thumb" src="../img/thumb-05.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/06.jpg" />
-                <img u="thumb" src="../img/thumb-06.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/07.jpg" />
-                <img u="thumb" src="../img/thumb-07.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/08.jpg" />
-                <img u="thumb" src="../img/thumb-08.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/09.jpg" />
-                <img u="thumb" src="../img/thumb-09.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/10.jpg" />
-                <img u="thumb" src="../img/thumb-10.jpg" />
-            </div>
-            
-            <div>
-                <img u="image" src="../img/11.jpg" />
-                <img u="thumb" src="../img/thumb-11.jpg" />
-            </div>
-            <div>
-                <img u="image" src="../img/12.jpg" />
-                <img u="thumb" src="../img/thumb-12.jpg" />
-            </div>
-            
-        </div> <!-- u="slides" -->
-        
-        
-
-
-
-
-        <!-- Arrow Navigator Skin Begin -->
-        <style>
-            /* jssor slider arrow navigator skin 05 css */
-            /*
-            .jssora05l              (normal)
-            .jssora05r              (normal)
-            .jssora05l:hover        (normal mouseover)
-            .jssora05r:hover        (normal mouseover)
-            .jssora05ldn            (mousedown)
-            .jssora05rdn            (mousedown)
-            */
-            .jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
-            {
-                position: absolute;
-                cursor: pointer;
-                display: block;
-                background: url(../img/a17.png) no-repeat;
-                overflow:hidden;
-            }
-            .jssora05l { background-position: -10px -40px; }
-            .jssora05r { background-position: -70px -40px; }
-            .jssora05l:hover { background-position: -130px -40px; }
-            .jssora05r:hover { background-position: -190px -40px; }
-            .jssora05ldn { background-position: -250px -40px; }
-            .jssora05rdn { background-position: -310px -40px; }
-        </style>
-        <!-- Arrow Left -->
-        <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 158px; left: 8px;">
-        </span>
-        <!-- Arrow Right -->
-        <span u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 158px; right: 8px">
-        </span>
-        <!-- Arrow Navigator Skin End -->
-        
-        
-
-
-
-        <!-- Thumbnail Navigator Skin Begin -->
-        <div u="thumbnavigator" class="jssort01" style="position: absolute; width: 800px; height: 100px; left:0px; bottom: 0px;">
-            <!-- Thumbnail Item Skin Begin -->
-            <style>
-                /* jssor slider thumbnail navigator skin 01 css */
-                /*
-                .jssort01 .p           (normal)
-                .jssort01 .p:hover     (normal mouseover)
-                .jssort01 .pav           (active)
-                .jssort01 .pav:hover     (active mouseover)
-                .jssort01 .pdn           (mousedown)
-                */
-                .jssort01 .w {
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                .jssort01 .c {
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    width: 68px;
-                    height: 68px;
-                    border: #000 2px solid;
-                }
-
-                .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
-                    background: url(../img/t01.png) center center;
-                    border-width: 0px;
-                    top: 2px;
-                    left: 2px;
-                    width: 68px;
-                    height: 68px;
-                }
-
-                .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
-                    top: 0px;
-                    left: 0px;
-                    width: 70px;
-                    height: 70px;
-                    border: #fff 1px solid;
-                }
-            </style>
-            
-            <div u="slides" style="cursor: move;">
-                <div u="prototype" class="p" style="position: absolute; width: 72px; height: 72px; top: 0; left: 0;">
-                    <div class=w><thumbnailtemplate style=" width: 100%; height: 100%; border: none;position:absolute; top: 0; left: 0;"></thumbnailtemplate></div>
-                    <div class=c>
-                    </div> <!-- class=c -->
-                </div> <!-- u="prototype" -->
-            </div> <!-- u="slides" style="cursor: move -->
-            <!-- Thumbnail Item Skin End -->
-        </div> <!-- u="thumbnavigator" -->
-        <!-- Thumbnail Navigator Skin End -->
-        
-
-        <a style="display: none" href="http://www.jssor.com">javascript</a>
-        <!-- Trigger -->
-        <script>
-            jssor_slider1_starter('slider1_container');
-        </script>
+        </div> <!-- id="pond" class="ap" -->
+    </section>
     
+   
+<section>
+<div id="gallery2" class="ap">
 
+<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+    
+<!-- Pond Pics -->
+    <div id="wowslider-container2">
+    <div class="ws_images">
+        <ul>
+            <li><img src="data2/images/01.jpg" alt="01" title="01" id="wows2_0"/></li>
+            <li><img src="data2/images/02.jpg" alt="02" title="02" id="wows2_1"/></li>
+            <li><img src="data2/images/03.jpg" alt="03" title="03" id="wows2_2"/></li>
+            <li><img src="data2/images/04.jpg" alt="04" title="04" id="wows2_3"/></li>
+            <li><img src="data2/images/05.jpg" alt="05" title="05" id="wows2_4"/></li>
+            <li><img src="data2/images/06.jpg" alt="06" title="06" id="wows2_5"/></li>
+            <li><img src="data2/images/07.jpg" alt="07" title="07" id="wows2_6"/></li>
+            <li><img src="data2/images/08.jpg" alt="08" title="08" id="wows2_7"/></li>
+            <li><img src="data2/images/09.jpg" alt="09" title="09" id="wows2_8"/></li>
+            <li><img src="data2/images/10.jpg" alt="10" title="10" id="wows2_9"/></li>
+            <li><img src="data2/images/11.jpg" alt="11" title="11" id="wows2_10"/></li>
+            <li><img src="data2/images/12.jpg" alt="12" title="12" id="wows2_11"/></li>
+        </ul>
+</div> <!-- class="ws_images" -->
+<div class="ws_bullets">
+    <div>
+            <a href="#" title="01"><img src="data2/tooltips/01.jpg" alt="01"/>1</a>
+            <a href="#" title="02"><img src="data2/tooltips/02.jpg" alt="02"/>2</a>
+            <a href="#" title="03"><img src="data2/tooltips/03.jpg" alt="03"/>3</a>
+            <a href="#" title="04"><img src="data2/tooltips/04.jpg" alt="04"/>4</a>
+            <a href="#" title="05"><img src="data2/tooltips/05.jpg" alt="05"/>5</a>
+            <a href="#" title="06"><img src="data2/tooltips/06.jpg" alt="06"/>6</a>
+            <a href="#" title="07"><img src="data2/tooltips/07.jpg" alt="07"/>7</a>
+            <a href="#" title="08"><img src="data2/tooltips/08.jpg" alt="08"/>8</a>
+            <a href="#" title="09"><img src="data2/tooltips/09.jpg" alt="09"/>9</a>
+            <a href="#" title="10"><img src="data2/tooltips/10.jpg" alt="10"/>10</a>
+            <a href="#" title="11"><img src="data2/tooltips/11.jpg" alt="11"/>11</a>
+            <a href="#" title="12"><img src="data2/tooltips/12.jpg" alt="12"/>12</a>
     </div>
-
-
-
-
-
-
-
-
-
-
+</div> <!-- class="ws_bullets" -->
+<span class="wsl"></span>
     
-</div>
+    <div class="ws_shadow"></div>
+    </div>  
+    <script type="text/javascript" src="engine2/wowslider.js"></script>
+    <script type="text/javascript" src="engine2/script.js"></script>
+    <!-- End WOWSlider.com BODY section -->
+
+
+
+   </div>
 </section>
-    <!-- Jssor Slider End -->
-                
-				
+   
 
 
 
 
-			<!-- brands -->
-            <section>
-                <div id="brands" class="ap alternate" background-color:rgba(100,110,110,0)> 
-                    <div class="wrap">
+
+	<!-- brands -->
+        <section>
+            <div id="brands" class="ap alternate" background-color:rgba(100,110,110,0)> 
+                <div class="wrap">
                         
 
-                        <h2>Brands<span>We use the highest quality products</span><span class="miniraya"></span></h2>
+                <h2>Brands<span>We use the highest quality products</span><span class="miniraya"></span></h2>
                     
                     
-                    <div class="job wellcome">
+                    <div class="job wellcome" style="margin-bottom:50px" >
                         <img width="290" height="126" src="" data-iurl="i/atlantic.png" alt="Atlantic" />
-                        <h4>Atlantic<i></i></h4>
-                        <p>brand 1 description.</p>
+                        <!-- <h4>Atlantic</h4>
+                        <p>brand 1 description.</p> -->
                     </div>
                     <div class="job wellcome delay1">
                         <img width="148" height="81" src="" data-iurl="i/dsa.png" alt="Deep Sea" />
-                        <h4>Deep Sea Aquatics</h4>
-                        <p>brand 2 description.</p>
+                        <!-- <h4>Deep Sea Aquatics</h4>
+                        <p>brand 2 description.</p> -->
                     </div>
 					<div class="job wellcome delay2">
                         <img width="305" height="93" src="" data-iurl="i/InstantOcean.png" alt="Instant Ocean" />
-                        <h4>Instant Ocean</h4>
-                        <p>brand 3 description.</p>
+                        <!-- <h4>Instant Ocean</h4>
+                        <p>brand 3 description.</p> -->
                     </div>
                     <div class="job wellcome delay3">
                         <img width="259" height="115" src="" data-iurl="i/python.gif" alt="Python Products" />
-                        <h4>Python Products<i></i></h4>
-                        <p>brand 4 description.</p>
+                        <!-- <h4>Python Products<i></i></h4>
+                        <p>brand 4 description.</p> -->
                     </div>
                     <div class="job wellcome delay4">
                         <img width="259" height="125" src="" data-iurl="i/ocean.png" alt="Ocean Aquaria" />
-                        <h4>Ocean Aquaria</h4>
-                        <p>brand 5 description</p>
+                        <!-- <h4>Ocean Aquaria</h4>
+                        <p>brand 5 description</p> -->
                     </div>
                     <div class="job wellcome delay5">
                     	<img width="300" height="53" src="" data-iurl="i/brand6.gif" alt="Savio" />
-                        <h4>Savio</h4>
-                        <p>brand 6 descriptio.</p>
+                        <!-- <h4>Savio</h4>
+                        <p>brand 6 descriptio.</p> -->
                     </div>
 
                         <div class="clear"></div>
@@ -647,37 +439,25 @@
             <footer>               
 			</footer>
 
-		</div> <!-- class="container" -->
+	</div> <!-- class="container" -->
 	</div> <!-- id="frame" -->
 	
 	<div id="demoviewer" class="modal">
 		<div class="browser"></div>
 		<img src="" alt="demo" />
         <a href="javascript:void(0)" class="modal_close"></a>
-	</div>
+	</div> <!-- id="demoviewer" class="modal" -->
 
 
 
 	<!-- Scripts -->
 	
 
-    <script src="js/jquery.min.js"></script>
-
-    
+    <script src="js/jquery.min.js"></script>    
 	<script src="js/plugins.js" async></script>
     <script src="js/script.js" async></script>
 	
-	// <script>
-	//     (function (i, s, o, g, r, a, m) {
-	//         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-	//             (i[r].q = i[r].q || []).push(arguments)
-	//         }, i[r].l = 1 * new Date(); a = s.createElement(o),
- //            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-	//     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-	//     ga('create', 'UA-42929761-1', '150px.com');
-	//     ga('send', 'pageview');
- //    </script>
+	
 	
 </body>
 </html>
