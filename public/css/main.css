@@ -235,7 +235,7 @@ body .buto:active{
 .prev:hover{background-position:0 -77px}
 .next:hover{background-position:-84px -77px}
 
-.miniraya{margin:20px 0;width:100px;height:1px;background-color:#EC6262; display:block}
+.miniraya{margin:20px 0;width:100px;height:1px;display:block}
 body .buap{margin:39px 0 0; width:300px; padding:21px 25px}
 
 /*soluciones*/
