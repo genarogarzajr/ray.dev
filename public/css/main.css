@@ -45,7 +45,7 @@ body, html {height: 100%; margin:0; padding:0; font-size:100%; -webkit-overflow-
 body{color:#000; background:#202020; -webkit-overflow-scroll: touch;-webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-rendering:optimizeLegibility; -webkit-backface-visibility: hidden}
 ::selection { background: rgba(253,110,110,.3); color:#fff }
 ::-moz-selection {background: rgba(253,110,110,.3); color:#fff}
-h1{color:#fff; font-family:'Novecento', sans-serif; font-size:53px; margin:0; line-height:60px; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-rendering:optimizeLegibility;}
+h1{color:#ff6600; font-family:'Proxima', sans-serif; font-size:50px; margin:0; line-height:60px; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-rendering:optimizeLegibility;}
 h2{font:bold 37px 'proxima', sans-serif; margin:0; color:#000}
 h2 span{display:block; color:#000; font:100 18px/30px 'Open Sans'; margin-top:10px; max-width:400px}
 h3{font:bold 17px 'novecento', sans-serif; margin:0; color:#000}
@@ -73,7 +73,7 @@ body .buto{
 	text-shadow:1px 1px 0px rgba(0, 0, 0, .1);
 	font:bold 16px "Novecento"; text-transform:uppercase;
 	color:#fff; letter-spacing:1px;
-	background-color:#EC6262; 
+	background-color:#ff6600; 
 	display:inline-block; border:1px solid #EC6262;
 }
 body .buto:hover{background-color:#202020; color:#fff; text-shadow:none; border-color:#202020}
@@ -220,7 +220,7 @@ body .buto:active{
 
 /* Intro */
 #intro{padding:50px; border:none;background:rgba(255,255,255,.95)}
-#intro h1{margin: 0 0 2px;font:30px/60px 'Proxima';text-align: left;color:#000;border-bottom: 1px solid #dedede;display: inline;padding-bottom: 8px}
+#intro h1{margin: 0 0 2px;font:bold 50px/60px 'Proxima';text-align: left;color:#ff6600;display: inline;padding-bottom: 8px}
 #intro h1 b{color:#202020}
 
 #background{background-repeat:no-repeat; background-position:right center; width:100%; height:100%; position:fixed; background-size:cover; z-index:111}
@@ -317,8 +317,8 @@ body .buap{margin:39px 0 0; width:300px; padding:21px 25px}
 .mention h2{padding:49px 30px 10px 30px; color: #fff; font:normal 30px 'proxima'; margin: 0 auto; line-height: 40px; text-align: center}
 .mention p{color:#EC6262; font-size:15px; margin-bottom:100px}
 
-/* Clients / Trabajos */
-#brands{text-align:center; padding:50px 0 0; width:100%}
+/* Brands */
+#brands{text-align:left; padding:50px 0 0; width:100%}
 .client{width:25%;float:left; position:relative}
 .client b{display:block; font:normal 17pt 'proxima';color:#fff; text-align:left; height:95px}
 .client span{text-align:right; background-color:rgba(0,0,0,.85); position:absolute;color:#EC6262; width:100%; height:100%; top:0; left:0; padding:14% 10% 0; z-index:9999; font:11pt 'open sans'; opacity:0}
@@ -332,10 +332,10 @@ body .buap{margin:39px 0 0; width:300px; padding:21px 25px}
 .job{float: left;width:33%;margin-bottom:100px; text-align:center}
 .job h4{margin-bottom:15px}
 
-/* Contacte */
-#contactar{padding-bottom:100px}
-#contactar h2{}
-#contactar hr{display: none}
+/* Contact */
+#contact{padding-bottom:100px}
+#contact h2{}
+#contact hr{display: none}
 .form{width:30%}
 .form input[type=text]{
     border:1px solid rgba(0,0,0,.1);
@@ -348,6 +348,15 @@ body .buap{margin:39px 0 0; width:300px; padding:21px 25px}
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
 }
+
+
+
+
+#brands h2{text-align:left}
+
+
+
+
 .form .nom{background-position:13px -427px}
 .form .mail{background-position:13px -381px}
 .form .telf{background-position:13px -185px}
@@ -505,7 +514,7 @@ and (max-width : 1124px) {
 	#demos .browser{width:429px}
 	.demo{width:429px; height:195px}
 	.form{width:100%; padding-bottom:30px}
-    #contactar hr{display: block; clear: both;}
+    #contact hr{display: block; clear: both;}
 	.me {width: 100%;margin-top:0}
 	#brands img{border:none !important}
 	.mention h2{width:100%; font-size:30px; padding:60px 50px 30px; line-height:40px}
