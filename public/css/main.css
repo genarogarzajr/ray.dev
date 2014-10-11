@@ -354,8 +354,13 @@ body .buap{margin:39px 0 0; width:300px; padding:21px 25px}
 
 #brands h2{text-align:left}
 
+.left{
+	float:left;
+}
 
-
+.rightt{
+	float:right;
+}
 
 .form .nom{background-position:13px -427px}
 .form .mail{background-position:13px -381px}
