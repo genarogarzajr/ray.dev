@@ -48,7 +48,7 @@ body{color:#000; background:#202020; -webkit-overflow-scroll: touch;-webkit-font
 h1{color:#ff6600; font-family:'Proxima', sans-serif; font-size:50px; margin:0; line-height:60px; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-rendering:optimizeLegibility;}
 h2{font:bold 37px 'proxima', sans-serif; margin:0; color:#000}
 h2 span{display:block; color:#000; font:100 18px/30px 'Open Sans'; margin-top:10px; max-width:400px}
-h3{font:bold 17px 'novecento', sans-serif; margin:0; color:#000}
+h3{font:bold 17px 'novecento', sans-serif; margin:0; color:#ff6600}
 h4{font:bold 22px 'Novecento', sans-serif; margin:0; color:#000}
 h5{font:18px 'Open Sans', sans-serif; margin:0}
 p, div, li{font-family: Open Sans, Arial, Helvetica, sans-serif; color:#000; font-size:13px; margin:0; line-height:24px; font-weight:100; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-rendering:optimizeLegibility;}
